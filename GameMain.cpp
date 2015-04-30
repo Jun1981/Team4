@@ -4,6 +4,8 @@
 #include "MIKU.h"
 #include "key.h"
 
+#include"map.h"
+
 int G_MODE=0;
 
 
@@ -42,16 +44,7 @@ void GameMain(){
 }
 
 
-void Init(){
 
-	G_MODE=1;//ゲームモード
-
-
-	miku.Init();//ミク初期化
-
-	LoadImg();//画像などの読み込み
-
-}
 
 //自機画像データ等の読み込み
 void LoadImg(){
@@ -64,13 +57,18 @@ void LoadImg(){
 
 //計算メイン
 void Calc(){
+	p_move();//プレイヤー計算
+	p_anime();//自キャラアニメーション	
+
 
 }
 
 
 //描画
 void Draw(){
+	DrawMap();
 	miku.Draw();
+	
 
 
 }

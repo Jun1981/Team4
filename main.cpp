@@ -3,6 +3,8 @@
 
 #include "GameMain.h"
 #include "key.h"
+#include "MIKU.h"
+#include "map.h"
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow){
@@ -42,5 +44,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 	DxLib_End();// ＤＸライブラリ使用の終了処理
 	return 0;// アプリケーションの終了
+
+}
+
+void Init(){
+
+	G_MODE=1;//ゲームモード
+
+
+	miku.Init();//ミク初期化
+
+	LoadImg();//画像などの読み込み
+	LoadMap1();
 
 }
