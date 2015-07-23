@@ -1,7 +1,9 @@
 #pragma once
 
+#include "map.h"
 
-
+#define MAP_W 100
+#define MAP_H 100
 
 //クラス宣言
 class MIKU{
@@ -48,15 +50,19 @@ public:
 	int spd;//移動スピード
 	int n_spd;//斜め移動スピード
 
-	int n_line[1200][4];//斜めラインチェック用
+	int n_line[MAP_BH][MAP_BW][4];//斜めラインチェック用 左カッコはマップの縦ブロック＊横ブロック数
 
 	int anime;//アニメーション
 	int anime_c;//アニメーションカウンタ
+
+	void real_adj();//リアル座標調整
+
 
 	//関数
 	void Init();//ミク変数初期化
 	void LoadImg();//自機画像読み込み
 	void Draw();//ミク描画関数
+	
 	
 
 };
@@ -77,6 +83,12 @@ extern void p_move(void);
 extern void mv_chk(int,int*);
 extern void dia_chk(void);
 extern void p_anime(void);
+extern void EvtChk();//イベント関係
+
+extern void EvtBlockChk();//イベントブロックチェック
+extern int EvtBlockTouch[MAP_BH][MAP_BW];
 
 extern int nokori[2];
+
+
 

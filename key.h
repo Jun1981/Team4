@@ -12,6 +12,8 @@ class  KEY{
 public:
 
 	int c;//十字キー８方向で　下が０
+	int ct;//十字キー　おしっぱじゃない
+
 	int z;//zキーボタン
 	int x;
 

@@ -31,6 +31,10 @@ void key_chk(){
 	if (CheckHitKey(KEY_INPUT_Z))      { Key_Info |= 0x20; }
 	if (CheckHitKey(KEY_INPUT_X))      { Key_Info |= 0x80; }
 	if (CheckHitKey(KEY_INPUT_ESCAPE)) { Key_Info |= 0x40; }
+	
+	if( CheckHitKey( KEY_INPUT_RETURN )){Key_Info |= 0x100;}//エンターキー
+
+
 	if (CheckHitKeyAll()) { ChkKAny = true; }                    // あにー
 
 	Key_Trg = (Key_Info ^ Key_Old) & Key_Info;          // キートリガー情報セット
@@ -49,8 +53,10 @@ void key_henkan(void){
 		if ((Key_Info & 0x0f) == 0x01){ key.c = 2; }//左
 		if ((Key_Info & 0x0f) == 0x02){ key.c = 6; }//右
 		if ((Key_Info & 0x0f) == 0x04){ key.c = 4; }//上
+		if (Key_Trg  == 0x04){ key.ct = 4; }//上
+
 		if ((Key_Info & 0x0f) == 0x08){ key.c = 0; }//下
-						  
+		if (Key_Trg  == 0x08){ key.ct = 0; }//下
 						  
 						  
 		if ((Key_Info & 0x0f) == 0x05){ key.c = 3; }//左上
@@ -75,6 +81,6 @@ void key_henkan(void){
 		
 
 	}
-	else{ key.c = -1; key.z = 0;key.x=0; }//キー押してない
+	else{ key.c=-1; key.z = 0;key.x=0; }//キー押してない
 
 }

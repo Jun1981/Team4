@@ -6,6 +6,10 @@
 #include "MIKU.h"
 #include "map.h"
 
+#include "menu.h"
+
+#include "debug.h"
+
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow){
 
@@ -34,6 +38,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		// ゲームコントロールメイン		
 		GameMain();//メインゲーム
+
+		debug_msg();//デバッグメッセージ
 		
 
 
@@ -54,7 +60,9 @@ void Init(){
 
 	miku.Init();//ミク初期化
 
+	menu_init();//メニュー画面初期化
+
 	LoadImg();//画像などの読み込み
-	LoadMap1();
+	LoadMap1();//マップ関係初期化
 
 }
