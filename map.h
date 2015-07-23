@@ -2,7 +2,7 @@
 
 
 #define MAP_BW 100
-#define MAP_BH 100
+#define MAP_BH 101
 
 
 class MAP{
@@ -65,7 +65,7 @@ extern void DrawMapEvt2();//門とかボスとか表示関数
 
 
 
-extern MHit bhit[100*100];//マップ　縦ブロックｘ横ブロック
+extern MHit bhit[MAP_BH*MAP_BW];//マップ　縦ブロックｘ横ブロック
 
 
 //extern int mhit2[30][40];
