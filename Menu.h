@@ -1,7 +1,7 @@
 #pragma once
 
 
-class Select {
+class Menu {
 protected:
 	
 
@@ -28,7 +28,8 @@ public:
 		
 	//セッター
 	void setArrayGh(int);//背景画像の配列作成 枚数
-	void setArrayGhItem();//項目背景の配列作成
+	void setArrayGhItem();void setArrayGhItem(int);//項目背景の配列作成
+	
 	void setArrayGhCur(int);//カーソルの配列作成
 	//void setArrayItemInitXY();//アイテム座標の初期位置
 	//void setArrayItemXY();
@@ -46,8 +47,8 @@ public:
 	//void draw();//描画
 
 
-	Select();//コンストラクタ
-	void termProc();//終了処理
+	Menu();//コンストラクタ
+	void close();//終了処理
 	
 };
 
@@ -57,5 +58,5 @@ L,
 R,
 };//enum
 
-//extern Select titleSel;//タイトル　セレクト
+//extern Menu titleSel;//タイトル　セレクト
 

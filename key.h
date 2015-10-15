@@ -19,5 +19,13 @@ public:
 
 
 };
+enum KeyName{
+	keyLeft=0x01,
+	keyRight=0x02,
+	keyUp=0x04,
+	keyDown=0x08,
+	keyEnter=0x100,
+
+};
 
 extern KEY key;

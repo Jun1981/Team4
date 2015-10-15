@@ -1,8 +1,10 @@
 #include "debug.h"
 #include "GameMain.h"
-#include "Select.h"
+#include "Menu.h"
 #include <iostream>
 #include "key.h"
+
+#include "Title.h"
 
 #include "../DxLib/DxLib.h"
 void debug(){

@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Menu.h"
 class GameMain{
 
 public:
@@ -18,7 +18,6 @@ public:
 	int fadeIn(int);//フェードイン関数	終了時に　１００を返す
 };
 
-void titleInit();//初期化
-void titleCal();//計算
-void titleDraw();
+//クラス外部宣言
 extern GameMain game;//クラス宣言
+//extern Menu stgSel;
